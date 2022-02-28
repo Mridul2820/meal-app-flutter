@@ -16,6 +16,32 @@ class MealItem extends StatelessWidget {
     required this.affordability,
   });
 
+  String get complexityText {
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simple';
+      case Complexity.Challenging:
+        return 'Challenging';
+      case Complexity.Hard:
+        return 'Hard';
+      default:
+        return 'Unknown';
+    }
+  }
+
+  String get affordabilityText {
+    switch (affordability) {
+      case Affordability.Affordable:
+        return 'Affordable';
+      case Affordability.Pricey:
+        return 'Pricey';
+      case Affordability.Luxurious:
+        return 'Expensive';
+      default:
+        return 'Unknown';
+    }
+  }
+
   void selectMeal() {}
 
   @override
@@ -88,7 +114,7 @@ class MealItem extends StatelessWidget {
                         width: 6,
                       ),
                       Text(
-                        complexity.toString().split('.').last,
+                        complexityText,
                       ),
                     ],
                   ),
@@ -98,7 +124,9 @@ class MealItem extends StatelessWidget {
                       const SizedBox(
                         width: 6,
                       ),
-                      Text(affordability.toString().split('.').last),
+                      Text(
+                        affordabilityText,
+                      ),
                     ],
                   ),
                 ],
