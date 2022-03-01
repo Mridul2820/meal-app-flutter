@@ -63,7 +63,7 @@ class MealDetailScreen extends StatelessWidget {
                     child: Text(
                       selectedMeal.ingredients[index],
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 18,
                       ),
                     ),
